@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Translator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Translator App</h2>
+
+  <textarea id="inputText" placeholder="Enter text"></textarea>
+
+  <br>
+
+  <select id="fromLang">
+    <option value="en">English</option>
+    <option value="hi">Hindi</option>
+  </select>
+
+  <select id="toLang">
+    <option value="hi">Hindi</option>
+    <option value="en">English</option>
+  </select>
+
+  <br>
+
+  <button onclick="translateText()">Translate</button>
+
+  <br>
+
+  <textarea id="outputText" placeholder="Translation"></textarea>
+
+  <script src="script.js"></script>
+</body>
+</html>
