@@ -1,35 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Translator</title>
+  <title>Pro Translator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <h2>Translator App</h2>
+<div class="container">
+  <h1>🌐 Pro Translator</h1>
 
-  <textarea id="inputText" placeholder="Enter text"></textarea>
+  <div class="card">
+    <textarea id="inputText" placeholder="Enter text..."></textarea>
 
-  <br>
+    <div class="controls">
+      <select id="fromLang">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+      </select>
 
-  <select id="fromLang">
-    <option value="en">English</option>
-    <option value="hi">Hindi</option>
-  </select>
+      <button class="swap-btn" onclick="swapLang()">⇄</button>
 
-  <select id="toLang">
-    <option value="hi">Hindi</option>
-    <option value="en">English</option>
-  </select>
+      <select id="toLang">
+        <option value="hi">Hindi</option>
+        <option value="en">English</option>
+      </select>
+    </div>
 
-  <br>
+    <button class="translate-btn" onclick="translateText()">Translate</button>
 
-  <button onclick="translateText()">Translate</button>
+    <textarea id="outputText" placeholder="Translation..." readonly></textarea>
+  </div>
+</div>
 
-  <br>
-
-  <textarea id="outputText" placeholder="Translation"></textarea>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

@@ -1,15 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial;
+  font-family: 'Segoe UI', sans-serif;
+  height: 100vh;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* glowing background effect */
+body::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: #00c6ff;
+  filter: blur(150px);
+  top: 10%;
+  left: 10%;
+  z-index: 0;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: #ff00c8;
+  filter: blur(150px);
+  bottom: 10%;
+  right: 10%;
+  z-index: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  z-index: 1;
+}
+
+h1 {
   text-align: center;
+  margin-bottom: 20px;
 }
 
+/* glass card */
+.card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px;
+
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  box-shadow: 
+    0 8px 32px rgba(0, 0, 0, 0.4),
+    inset 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+/* inputs */
 textarea {
-  width: 80%;
+  width: 100%;
   height: 100px;
-  margin: 10px;
+  border-radius: 12px;
+  border: none;
+  padding: 12px;
+  margin: 10px 0;
+  font-size: 14px;
+  outline: none;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+  border: 1px solid rgba(255,255,255,0.2);
 }
 
-select, button {
+textarea::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+/* controls */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+select {
+  flex: 1;
   padding: 10px;
-  margin: 5px;
+  border-radius: 10px;
+  border: none;
+
+  background: rgba(255,255,255,0.1);
+  color: white;
+}
+
+/* buttons */
+.swap-btn {
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: none;
+  background: rgba(255,255,255,0.2);
+  color: white;
+  cursor: pointer;
+}
+
+.translate-btn {
+  width: 100%;
+  margin-top: 10px;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow: 0 0 15px rgba(0, 198, 255, 0.5);
+  transition: 0.3s;
+}
+
+.translate-btn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(0, 198, 255, 0.8);
 }
